@@ -1,0 +1,144 @@
+/* --- RESET & LAYOUT (Same as before) --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* Brighter background to contrast the colorful buttons */
+    background-color: #f7f9fc;
+    color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* .name {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+} */
+
+.name {
+  font-family: "Noto Sans Khmer", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.bio {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 35px;
+    line-height: 1.5;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* --- THE NEW THEMED BUTTON STYLING --- */
+
+/* Base button styling (The 'default' structure) */
+.link-btn {
+    display: block;
+    padding: 18px 20px;
+    text-decoration: none;
+    border-radius: 12px; /* Slightly more rounded */
+    font-weight: 700;
+    font-size: 1.05rem;
+    
+    /* Default transition for smooth color changes */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    
+    /* Default shadow */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.06);
+}
+
+/* Hover effect applied to ALL platform buttons */
+.link-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* 1. TELEGRAM THEME */
+.link-btn[data-platform="telegram"] {
+    background-color: #26A5E4; /* Telegram Blue */
+    color: white;
+}
+/* Optional hover state for specific button */
+.link-btn[data-platform="telegram"]:hover {
+    background-color: #1a8cc4;
+}
+
+/* 2. FACEBOOK THEME */
+.link-btn[data-platform="facebook"] {
+    background-color: #1877F2; /* Facebook Blue */
+    color: white;
+}
+.link-btn[data-platform="facebook"]:hover {
+    background-color: #125dc2;
+}
+
+/* 3. INSTAGRAM THEME */
+/* Note: Instagram uses a gradient. The hover effect switches back-and-forth for interactivity */
+.link-btn[data-platform="instagram"] {
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    color: white;
+}
+.link-btn[data-platform="instagram"]:hover {
+    background: linear-gradient(45deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
+}
+
+/* 4. TIKTOK THEME */
+.link-btn[data-platform="tiktok"] {
+    background-color: #010101; /* TikTok Black */
+    color: white;
+    position: relative;
+    /* Optional: A subtle dual-color 'neon' border effect common on TikTok */
+    border-left: 4px solid #69C9D0; /* Cyan */
+    border-right: 4px solid #EE1D52; /* Magenta */
+}
+.link-btn[data-platform="tiktok"]:hover {
+    background-color: #1a1a1a;
+}
+
+/* --- SHARE BUTTON (Same as before) --- */
+.share-btn {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    color: #777;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.share-btn:hover {
+    color: #000;
+    text-decoration: underline;
+}
